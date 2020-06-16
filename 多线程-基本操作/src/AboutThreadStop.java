@@ -8,9 +8,9 @@ import java.util.Scanner;
  *
  * 如果子线程中有 sleep 方法, 那么为了可以让子线程接收到中断信息, interrupted 和 InterruptedException 都得写上
  *
- * 1. 如果对方正在 sleep / wait 等, 直接通知异常, 此时会将 isInterrupted 修改回 false
- * 2. b.isInterrupted(), 这样的话, isInterrupted 会一直为 true
- * 3. Thread.interrupted(), 这种情况下, isInterrupted 会先变成 true, 最后又修改成为 false
+ * 1. 如果对方正在 sleep / wait 等, 直接通知异常, 此时会将 isInterrupted 修改回 false(清除中断标志位)
+ * 2. b.isInterrupted(), 这样的话, isInterrupted 会一直为 true (不会清除中断标志位)
+ * 3. Thread.interrupted(), 这种情况下, isInterrupted 会先变成 true, 最后又修改成为 false (会清除中断标志位)
  * User: HHH.Y
  * Date: 2020-06-15
  */
