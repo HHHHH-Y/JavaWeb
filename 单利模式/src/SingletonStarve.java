@@ -8,7 +8,9 @@
  * User: HHH.Y
  * Date: 2020-06-20
  */
-public class SingletonStarve {
+
+// 通过 final 修饰类, 避免有人定义该类的子类来构造对象(有时候)
+public final class SingletonStarve {
     // 1. 我需要保存我仅有的一个对象(保存到一个静态属性中)
     private static final SingletonStarve instance;
 
