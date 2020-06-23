@@ -1,6 +1,6 @@
 /**
  * Created with IntelliJ IDEA.
- * Description:
+ * Description: 如果 notify 方法先于 wait 方法
  * notify 没有状态保存的
  * notify 早于 wait 之前运行, 什么都唤不醒
  * notify 只能唤醒当前时刻上已经 wait 的线程, 无法唤醒未来 wait 的线程
