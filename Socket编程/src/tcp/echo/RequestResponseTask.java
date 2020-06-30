@@ -1,33 +1,28 @@
 package tcp.echo;
 
 import java.io.*;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketAddress;
 import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.
- * Description: TCP 的服务端
+ * Description: 子线程, 用于进行资源响应
  * User: HHH.Y
  * Date: 2020-06-30
  */
-public class ServerThreafdPool {
-    // 明确 服务端的 端口号信息, 便于客户端找到服务端
-    public static final int SERVER_PORT = 8888;
 
-    public static void main(String[] args) throws IOException {
-        // 开张(向客户端提供端口号)
-        Logger.debug("准备创建 serverSocket");
-        ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
-        Logger.debug("创建 serverSocket 成功, 端口号是: " + SERVER_PORT);
-        // 等待着客户端发送请求 (等待着接电话)
-//        while (true) {
-            // 使用 accept() 方法建立连接 (相当于接电话)
-            Logger.debug("等待获取建立好的连接(等待接电话)");
-            Socket socket = serverSocket.accept();
-            Logger.debug("获取已经建立成功的连接(有人打电话来了并成功接听)");
+// 子线程
+public class RequestResponseTask implements Runnable {
+    // 通过构造方法将 socket 传进来
+    private final Socket socket;
 
+    public RequestResponseTask(Socket socket) {
+        this.socket = socket;
+    }
+    @Override
+    public void run() {
+        try {
             // 通过建立的连接 socket, 可以获取到发送请求的客户端信息(IP + port)
             SocketAddress remoteSocketAddress = socket.getRemoteSocketAddress();
             Logger.debug("对方的地址是: " + remoteSocketAddress);
@@ -65,6 +60,9 @@ public class ServerThreafdPool {
             socket.close();
             Logger.debug("成功关闭连接");
 //        }
+        } catch (IOException e) {
+            Logger.error(e.toString());
+        }
     }
 
     /**

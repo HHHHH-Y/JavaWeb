@@ -10,6 +10,12 @@ import java.util.Date;
  */
 public class Logger {
     public static void debug(String message) {
-        System.out.printf("%s: Debug: %s%n", new Date(), message);
+        System.out.printf("%s: %s: Debug: %s%n", Thread.currentThread().getName(), new Date(), message);
+    }
+
+    public static void error(String message) {
+        System.out.printf("%s: %s: ERROR: %s%n",  Thread.currentThread().getName(), new Date(), message);
     }
 }
+
+
