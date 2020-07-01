@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.
- * Description:
+ * Description: 客户端 "长连接" 请求
  * User: HHH.Y
  * Date: 2020-06-30
  */
