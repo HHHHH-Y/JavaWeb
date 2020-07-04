@@ -28,7 +28,7 @@ public class HttpClientDemo {
             writer.print(request);
             writer.flush();
 
-            // 等待响应
+            // 等待客户端响应
             Scanner scanner = new Scanner(socket.getInputStream(), "utf-8");
             while (scanner.hasNextLine()) {
                 String response = scanner.nextLine();
