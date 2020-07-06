@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>古月月的翻译机器</title>
+</head>
+<body>
+    <h1>古月月字典</h1>
+    <!--action 的路径可以有以下几种形式:
+        1. http://127.0.0.1/huyue/translate
+        2. /huyue/translate
+        3. translate
+    -->
+        <form method="get" action = "http://127.0.0.1:8080/huyue/translate">
+            <div>
+            <label for = "en">英文单词</label>
+            <input type="text" id = "en" name="english" placeholder="请输入英文单词">
+            </div>
+        </form>
+    <div>
+        <button type="submit">翻译</button>
+    </div>
+</body>
+</html>
