@@ -9,9 +9,17 @@
         <servlet-name>translate</servlet-name>
         <servlet-class>com.huyue.TranslateServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>reqinfo</servlet-name>
+        <servlet-class>com.huyue.ReqServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>translate</servlet-name>
         <url-pattern>/translate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>reqinfo</servlet-name>
+        <url-pattern>/reqinfo</url-pattern>
     </servlet-mapping>
 </web-app>
