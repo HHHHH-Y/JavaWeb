@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="HTTP协议-Servlet开发:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/HTTP_Servlet_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="HTTP协议-Servlet开发/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="HTTP协议-Servlet开发" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-5.1.47" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
